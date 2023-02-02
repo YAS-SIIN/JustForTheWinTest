@@ -32,5 +32,5 @@ namespace JustForTheWinTest
 
             return BallRandomStatus.OrderBy(x => rnd.Next()).ToArray();
         }
-    }
+    }   
 }
