@@ -34,11 +34,13 @@
             this.pnlEnterGame = new System.Windows.Forms.Panel();
             this.pnlBasket = new System.Windows.Forms.Panel();
             this.lblBasket = new System.Windows.Forms.Label();
-            this.btnChooseBall = new System.Windows.Forms.Button();
             this.lblCredits = new System.Windows.Forms.Label();
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.pnlGameMain = new System.Windows.Forms.Panel();
+            this.lblPlayedRound = new System.Windows.Forms.Label();
+            this.lblWin = new System.Windows.Forms.Label();
+            this.lblRTP = new System.Windows.Forms.Label();
             this.pnlEnterGame.SuspendLayout();
             this.pnlBasket.SuspendLayout();
             this.pnlGameMain.SuspendLayout();
@@ -110,21 +112,10 @@
             this.lblBasket.TabIndex = 6;
             this.lblBasket.Text = "Basket";
             // 
-            // btnChooseBall
-            // 
-            this.btnChooseBall.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnChooseBall.Location = new System.Drawing.Point(443, 208);
-            this.btnChooseBall.Margin = new System.Windows.Forms.Padding(4);
-            this.btnChooseBall.Name = "btnChooseBall";
-            this.btnChooseBall.Size = new System.Drawing.Size(167, 40);
-            this.btnChooseBall.TabIndex = 3;
-            this.btnChooseBall.Text = "Choose a Ball";
-            this.btnChooseBall.UseVisualStyleBackColor = true;
-            // 
             // lblCredits
             // 
             this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(488, 17);
+            this.lblCredits.Location = new System.Drawing.Point(435, 17);
             this.lblCredits.Name = "lblCredits";
             this.lblCredits.Size = new System.Drawing.Size(79, 21);
             this.lblCredits.TabIndex = 7;
@@ -133,7 +124,7 @@
             // lblPlayerName
             // 
             this.lblPlayerName.AutoSize = true;
-            this.lblPlayerName.Location = new System.Drawing.Point(139, 17);
+            this.lblPlayerName.Location = new System.Drawing.Point(4, 17);
             this.lblPlayerName.Name = "lblPlayerName";
             this.lblPlayerName.Size = new System.Drawing.Size(110, 21);
             this.lblPlayerName.TabIndex = 8;
@@ -142,7 +133,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.Location = new System.Drawing.Point(339, 208);
+            this.btnBack.Location = new System.Drawing.Point(432, 208);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 40);
@@ -153,16 +144,45 @@
             // 
             // pnlGameMain
             // 
+            this.pnlGameMain.Controls.Add(this.lblRTP);
+            this.pnlGameMain.Controls.Add(this.lblPlayedRound);
+            this.pnlGameMain.Controls.Add(this.lblWin);
             this.pnlGameMain.Controls.Add(this.lblPlayerName);
             this.pnlGameMain.Controls.Add(this.pnlBasket);
             this.pnlGameMain.Controls.Add(this.lblCredits);
             this.pnlGameMain.Controls.Add(this.btnBack);
-            this.pnlGameMain.Controls.Add(this.btnChooseBall);
             this.pnlGameMain.Location = new System.Drawing.Point(12, 49);
             this.pnlGameMain.Name = "pnlGameMain";
             this.pnlGameMain.Size = new System.Drawing.Size(927, 358);
             this.pnlGameMain.TabIndex = 10;
             this.pnlGameMain.Visible = false;
+            // 
+            // lblPlayedRound
+            // 
+            this.lblPlayedRound.AutoSize = true;
+            this.lblPlayedRound.Location = new System.Drawing.Point(642, 17);
+            this.lblPlayedRound.Name = "lblPlayedRound";
+            this.lblPlayedRound.Size = new System.Drawing.Size(126, 21);
+            this.lblPlayedRound.TabIndex = 11;
+            this.lblPlayedRound.Text = "Played Round : 0";
+            // 
+            // lblWin
+            // 
+            this.lblWin.AutoSize = true;
+            this.lblWin.Location = new System.Drawing.Point(548, 17);
+            this.lblWin.Name = "lblWin";
+            this.lblWin.Size = new System.Drawing.Size(58, 21);
+            this.lblWin.TabIndex = 10;
+            this.lblWin.Text = "Win : 0";
+            // 
+            // lblRTP
+            // 
+            this.lblRTP.AutoSize = true;
+            this.lblRTP.Location = new System.Drawing.Point(800, 17);
+            this.lblRTP.Name = "lblRTP";
+            this.lblRTP.Size = new System.Drawing.Size(56, 21);
+            this.lblRTP.TabIndex = 12;
+            this.lblRTP.Text = "RTP : 0";
             // 
             // frmMain
             // 
@@ -200,10 +220,12 @@
         private Panel pnlEnterGame;
         private Panel pnlBasket;
         private Label lblBasket;
-        private Button btnChooseBall;
         private Label lblCredits;
         private Label lblPlayerName;
         private Button btnBack;
         private Panel pnlGameMain;
+        private Label lblWin;
+        private Label lblPlayedRound;
+        private Label lblRTP;
     }
 }
