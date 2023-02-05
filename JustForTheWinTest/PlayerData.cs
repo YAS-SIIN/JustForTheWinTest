@@ -14,7 +14,7 @@ namespace JustForTheWinTest
         public string Description { get; set; } = "";
         public List<PictureBox> ListBalls { get; set; } = new List<PictureBox>();
         public List<BallData> BallData { get; set; } = new List<BallData>();                
-        public float Credits { get; set; } = 100;
+        public float Credits { get; set; } = 0;
         public float WinCount { get; set; } = 0;
         public float PlayedRound { get; set; } = 0;   
         public float RTP { get; set; } = 0;

@@ -38,12 +38,23 @@
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.pnlGameMain = new System.Windows.Forms.Panel();
+            this.lblRTP = new System.Windows.Forms.Label();
             this.lblPlayedRound = new System.Windows.Forms.Label();
             this.lblWin = new System.Windows.Forms.Label();
-            this.lblRTP = new System.Windows.Forms.Label();
+            this.btnSimulate = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblStart = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numRound = new System.Windows.Forms.NumericUpDown();
+            this.numCredits = new System.Windows.Forms.NumericUpDown();
             this.pnlEnterGame.SuspendLayout();
             this.pnlBasket.SuspendLayout();
             this.pnlGameMain.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRound)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCredits)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -62,7 +73,7 @@
             // 
             this.btnPlay.Enabled = false;
             this.btnPlay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPlay.Location = new System.Drawing.Point(79, 55);
+            this.btnPlay.Location = new System.Drawing.Point(132, 72);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(96, 40);
@@ -73,7 +84,7 @@
             // 
             // txtPlayerName
             // 
-            this.txtPlayerName.Location = new System.Drawing.Point(4, 18);
+            this.txtPlayerName.Location = new System.Drawing.Point(45, 35);
             this.txtPlayerName.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlayerName.MaxLength = 15;
             this.txtPlayerName.Name = "txtPlayerName";
@@ -86,17 +97,17 @@
             // 
             this.pnlEnterGame.Controls.Add(this.txtPlayerName);
             this.pnlEnterGame.Controls.Add(this.btnPlay);
-            this.pnlEnterGame.Location = new System.Drawing.Point(365, 414);
+            this.pnlEnterGame.Location = new System.Drawing.Point(489, 396);
             this.pnlEnterGame.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEnterGame.Name = "pnlEnterGame";
-            this.pnlEnterGame.Size = new System.Drawing.Size(257, 107);
+            this.pnlEnterGame.Size = new System.Drawing.Size(450, 122);
             this.pnlEnterGame.TabIndex = 3;
             // 
             // pnlBasket
             // 
             this.pnlBasket.BackColor = System.Drawing.Color.DarkOrange;
             this.pnlBasket.Controls.Add(this.lblBasket);
-            this.pnlBasket.Location = new System.Drawing.Point(4, 256);
+            this.pnlBasket.Location = new System.Drawing.Point(4, 238);
             this.pnlBasket.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBasket.Name = "pnlBasket";
             this.pnlBasket.Size = new System.Drawing.Size(919, 98);
@@ -133,7 +144,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.Location = new System.Drawing.Point(432, 208);
+            this.btnBack.Location = new System.Drawing.Point(432, 193);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 40);
@@ -153,9 +164,18 @@
             this.pnlGameMain.Controls.Add(this.btnBack);
             this.pnlGameMain.Location = new System.Drawing.Point(12, 49);
             this.pnlGameMain.Name = "pnlGameMain";
-            this.pnlGameMain.Size = new System.Drawing.Size(927, 358);
+            this.pnlGameMain.Size = new System.Drawing.Size(927, 340);
             this.pnlGameMain.TabIndex = 10;
             this.pnlGameMain.Visible = false;
+            // 
+            // lblRTP
+            // 
+            this.lblRTP.AutoSize = true;
+            this.lblRTP.Location = new System.Drawing.Point(800, 17);
+            this.lblRTP.Name = "lblRTP";
+            this.lblRTP.Size = new System.Drawing.Size(56, 21);
+            this.lblRTP.TabIndex = 12;
+            this.lblRTP.Text = "RTP : 0";
             // 
             // lblPlayedRound
             // 
@@ -175,14 +195,105 @@
             this.lblWin.TabIndex = 10;
             this.lblWin.Text = "Win : 0";
             // 
-            // lblRTP
+            // btnSimulate
             // 
-            this.lblRTP.AutoSize = true;
-            this.lblRTP.Location = new System.Drawing.Point(800, 17);
-            this.lblRTP.Name = "lblRTP";
-            this.lblRTP.Size = new System.Drawing.Size(56, 21);
-            this.lblRTP.TabIndex = 12;
-            this.lblRTP.Text = "RTP : 0";
+            this.btnSimulate.Enabled = false;
+            this.btnSimulate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSimulate.Location = new System.Drawing.Point(195, 72);
+            this.btnSimulate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSimulate.Name = "btnSimulate";
+            this.btnSimulate.Size = new System.Drawing.Size(96, 40);
+            this.btnSimulate.TabIndex = 1;
+            this.btnSimulate.Text = "Simulate";
+            this.btnSimulate.UseVisualStyleBackColor = true;
+            this.btnSimulate.Click += new System.EventHandler(this.btnSimulate_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblStart);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.numRound);
+            this.panel1.Controls.Add(this.numCredits);
+            this.panel1.Controls.Add(this.btnSimulate);
+            this.panel1.Location = new System.Drawing.Point(12, 396);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(469, 122);
+            this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(166, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 21);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "*";
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.ForeColor = System.Drawing.Color.Red;
+            this.lblStart.Location = new System.Drawing.Point(315, 12);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(17, 21);
+            this.lblStart.TabIndex = 12;
+            this.lblStart.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(242, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 21);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Round :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 21);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Credits (0 = infinite) :";
+            // 
+            // numRound
+            // 
+            this.numRound.Location = new System.Drawing.Point(242, 36);
+            this.numRound.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numRound.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numRound.Name = "numRound";
+            this.numRound.Size = new System.Drawing.Size(213, 29);
+            this.numRound.TabIndex = 5;
+            this.numRound.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numCredits
+            // 
+            this.numCredits.Location = new System.Drawing.Point(4, 35);
+            this.numCredits.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numCredits.Name = "numCredits";
+            this.numCredits.Size = new System.Drawing.Size(232, 29);
+            this.numCredits.TabIndex = 4;
             // 
             // frmMain
             // 
@@ -190,6 +301,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(951, 526);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGameMain);
             this.Controls.Add(this.pnlEnterGame);
             this.Controls.Add(this.lblTitle);
@@ -207,6 +319,10 @@
             this.pnlBasket.PerformLayout();
             this.pnlGameMain.ResumeLayout(false);
             this.pnlGameMain.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRound)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCredits)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +343,13 @@
         private Label lblWin;
         private Label lblPlayedRound;
         private Label lblRTP;
+        private Button btnSimulate;
+        private Panel panel1;
+        private NumericUpDown numCredits;
+        private NumericUpDown numRound;
+        private Label label2;
+        private Label label3;
+        private Label lblStart;
+        private Label label1;
     }
 }
