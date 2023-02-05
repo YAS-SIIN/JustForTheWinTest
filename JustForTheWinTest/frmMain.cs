@@ -124,8 +124,7 @@ namespace JustForTheWinTest
             }
             catch (Exception) { throw; }
         }
-
-
+            
         /// <summary>
         /// this will return list of twenty random chance
         /// <returns>list of chance</returns>
@@ -180,6 +179,9 @@ namespace JustForTheWinTest
         }
 
 
+        /// <summary>
+        /// this method simulate the game
+        /// </summary> 
         private void simulate()
         {
             try
