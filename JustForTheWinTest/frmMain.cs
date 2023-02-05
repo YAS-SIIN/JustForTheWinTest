@@ -13,7 +13,7 @@ namespace JustForTheWinTest
             InitializeComponent();
             _playerData = new();
         }
-             
+
         /// <summary>
         /// This method is for manual playing
         /// </summary>
@@ -22,7 +22,8 @@ namespace JustForTheWinTest
             try
             {
                 _playerData = new();
-                makeButtonBalls();
+                makeChanceBalls();
+
                 _playerData.Name = txtPlayerName.Text;
                 lblPlayerName.Text = $"Player Name : {_playerData.Name}";
                 lblCredits.Text = $"Credits : {_playerData.Credits}";
@@ -79,30 +80,12 @@ namespace JustForTheWinTest
             try
             {
                 PictureBox thisBall = (PictureBox)sender;
-                BallData ballData;
-                string gameResult = "";
-                if (!(_playerData.BallData is null))
-                {
-                    ballData = _playerData.BallData.Where(x => x.Name == thisBall.Name).FirstOrDefault();
-                    gameResult = ballData.BallStatus.ToString();
-
-                    _playerData.Credits -= ballData.BallStatus != EnumBallStatus.Extra ? 10 : 0;
-                    _playerData.PlayedRound += ballData.BallStatus != EnumBallStatus.Extra ? 1 : 0;
-                    if (ballData.BallStatus == EnumBallStatus.Win)
-                    {
-                        _playerData.WinCount += 1;
-                        _playerData.Credits += 20;
-                    }
-                }
-
-                lblWin.Text = $"Win : {_playerData.WinCount}";
-                lblCredits.Text = $"Credits : {_playerData.Credits}";
-                lblPlayedRound.Text = $"Played Round : {_playerData.PlayedRound}";
-                _playerData.RTP = ((_playerData.WinCount * 20) / (_playerData.PlayedRound * 10)) * 100;
-                lblRTP.Text = $"RTP : {_playerData.RTP.ToString("00.00")}";
-
-                makeButtonBalls();
-                MessageBox.Show(gameResult);
+                BallData ballData = new();
+                ballData = calculateScore(thisBall.Name);
+                _playerData.PlayedRound += 1;
+                showGameResult();
+                makeChanceBalls();
+                MessageBox.Show(ballData.BallStatus.ToString());
             }
             catch (Exception) { throw; }
         }
@@ -115,28 +98,22 @@ namespace JustForTheWinTest
             try
             {
                 _playerData = new();
-                makeButtonBalls();
+                makeChanceBalls();
                 _playerData.Name = "Simulate";
                 _playerData.Credits = numCredits.Value;
                 _playerData.PlayedRound = numRound.Value;
 
-                simulate();
-
                 lblPlayerName.Text = $"Player Name : {_playerData.Name}";
-                lblWin.Text = $"Win : {_playerData.WinCount}";
-                lblCredits.Text = $"Credits : {_playerData.Credits}";
-                lblPlayedRound.Text = $"Played Round : {_playerData.PlayedRound}";
-                _playerData.RTP = ((_playerData.WinCount * 20) / (_playerData.PlayedRound * 10)) * 100;
-                lblRTP.Text = $"RTP : {_playerData.RTP.ToString("00.00")}";
 
+                simulate();
                 pnlEnterGame.Enabled = false;
                 pnlSimulate.Enabled = false;
                 pnlGameMain.Visible = true;
-                pnlBasket.Enabled=false;
+                pnlBasket.Enabled = false;
             }
             catch (Exception) { throw; }
         }
-            
+
         /// <summary>
         /// this will return list of twenty random chance
         /// <returns>list of chance</returns>
@@ -159,16 +136,13 @@ namespace JustForTheWinTest
         }
 
         /// <summary>
-        /// this will create list of twenty array with chances
+        /// this will design 20 ball button shape inside basket panel
         /// </summary>                                                    
-        private void makeButtonBalls()
+        private void makeButtonBallsShape()
         {
-            int[] ballStatus = GenerateStatus();
             int startPosition = 5;
-            _playerData.ListBalls = new();
-            _playerData.BallData = new();
-
-            for (int i = 0; i <= ballStatus.Count() - 1; i++)
+            _playerData.ListBallShape = new();
+            for (int i = 0; i <= 19; i++)
             {
                 PictureBox newBall = new()
                 {
@@ -181,47 +155,95 @@ namespace JustForTheWinTest
                 };
                 newBall.Click += new System.EventHandler(btnBall_Click);
 
-                _playerData.ListBalls.Add(newBall);
+                _playerData.ListBallShape.Add(newBall);
                 this.pnlBasket.Controls.Add(newBall);
                 startPosition += 43;
-
-                BallData newBallData = new() { Name = newBall.Name, BallStatus = (EnumBallStatus)ballStatus[i] };
-                _playerData.BallData.Add(newBallData);
             }
         }
-           
+
         /// <summary>
-        /// this method simulate the game
+        /// this will create list of twenty array with chances
+        /// </summary>                                                    
+        private void makeChanceBalls()
+        {
+            int[] ballStatus = GenerateStatus();
+            _playerData.ListBallData = new();
+
+            for (int i = 0; i <= ballStatus.Count() - 1; i++)
+            {
+                BallData newBallData = new() { Name = $"btnBall{i}", BallStatus = (EnumBallStatus)ballStatus[i] };
+                _playerData.ListBallData.Add(newBallData);
+            }
+        }
+
+
+        /// <summary>
+        /// this method will simulate the game
         /// </summary> 
         private void simulate()
         {
             try
             {
                 Random rnd = new Random();
+                BallData ballData = new();
                 decimal playRound = _playerData.PlayedRound;
                 for (int i = 0; i < playRound; i++)
                 {
-                    BallData ballData;
-                    if (!(_playerData.BallData is null))
-                    {
-                        int chosenBall = rnd.Next(0, 19);
-                        ballData = _playerData.BallData.Where(x => x.Name == $"btnBall{chosenBall}").FirstOrDefault();
-
-                        _playerData.Credits -= ballData.BallStatus != EnumBallStatus.Extra ? 10 : 0;
-                        playRound += ballData.BallStatus == EnumBallStatus.Extra ? 1 : 0;
-
-                        if (ballData.BallStatus == EnumBallStatus.Win)
-                        {
-                            _playerData.WinCount += 1;
-                            _playerData.Credits += 20;
-                        }
-                    }
-
-                    makeButtonBalls();
+                    int chosenBall = rnd.Next(0, 19);
+                    ballData = calculateScore($"btnBall{chosenBall}");
+                    playRound += ballData.BallStatus == EnumBallStatus.Extra ? 1 : 0;
+                    makeChanceBalls();
                 }
+                showGameResult();
             }
             catch (Exception) { throw; }
         }
 
+        /// <summary>
+        /// this method will calculate score of every chance ball   
+        /// <returns>list of chance</returns>
+        /// </summary>
+        private BallData calculateScore(string ballIndexName)
+        {
+            BallData ballData = new();
+            if (!(_playerData.ListBallData is null))
+            {
+                ballData = _playerData.ListBallData.Where(x => x.Name == ballIndexName).FirstOrDefault();
+   
+                _playerData.Credits -= ballData.BallStatus != EnumBallStatus.Extra ? 10 : 0;
+
+                if (ballData.BallStatus == EnumBallStatus.Win)
+                {
+                    _playerData.WinCount += 1;
+                    _playerData.Credits += 20;
+                }
+            }
+            return ballData;
+        }
+
+        /// <summary>
+        /// this method will show result of game
+        /// </summary> 
+        private void showGameResult()
+        {
+            try
+            {
+                lblWin.Text = $"Win : {_playerData.WinCount}";
+                lblCredits.Text = $"Credits : {_playerData.Credits}";
+                lblPlayedRound.Text = $"Played Round : {_playerData.PlayedRound}";
+                _playerData.RTP = ((_playerData.WinCount * 20) / (_playerData.PlayedRound * 10)) * 100;
+                lblRTP.Text = $"RTP : {_playerData.RTP.ToString("00.00")}";
+            }
+            catch (Exception) { throw; }
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                makeButtonBallsShape();
+            }
+            catch (Exception) { throw; }
+        }
     }
 }

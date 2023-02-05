@@ -76,7 +76,7 @@
             // 
             this.btnPlay.Enabled = false;
             this.btnPlay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPlay.Location = new System.Drawing.Point(132, 72);
+            this.btnPlay.Location = new System.Drawing.Point(188, 72);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(96, 40);
@@ -87,12 +87,12 @@
             // 
             // txtPlayerName
             // 
-            this.txtPlayerName.Location = new System.Drawing.Point(45, 35);
+            this.txtPlayerName.Location = new System.Drawing.Point(55, 35);
             this.txtPlayerName.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlayerName.MaxLength = 15;
             this.txtPlayerName.Name = "txtPlayerName";
             this.txtPlayerName.PlaceholderText = "Enter your name : ";
-            this.txtPlayerName.Size = new System.Drawing.Size(249, 29);
+            this.txtPlayerName.Size = new System.Drawing.Size(369, 29);
             this.txtPlayerName.TabIndex = 2;
             this.txtPlayerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlayerName_KeyPress);
             // 
@@ -101,10 +101,10 @@
             this.pnlEnterGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEnterGame.Controls.Add(this.txtPlayerName);
             this.pnlEnterGame.Controls.Add(this.btnPlay);
-            this.pnlEnterGame.Location = new System.Drawing.Point(489, 325);
+            this.pnlEnterGame.Location = new System.Drawing.Point(529, 325);
             this.pnlEnterGame.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEnterGame.Name = "pnlEnterGame";
-            this.pnlEnterGame.Size = new System.Drawing.Size(450, 122);
+            this.pnlEnterGame.Size = new System.Drawing.Size(474, 122);
             this.pnlEnterGame.TabIndex = 3;
             // 
             // pnlBasket
@@ -114,7 +114,7 @@
             this.pnlBasket.Location = new System.Drawing.Point(6, 109);
             this.pnlBasket.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBasket.Name = "pnlBasket";
-            this.pnlBasket.Size = new System.Drawing.Size(915, 94);
+            this.pnlBasket.Size = new System.Drawing.Size(981, 94);
             this.pnlBasket.TabIndex = 5;
             this.pnlBasket.Tag = "Basket";
             // 
@@ -130,7 +130,7 @@
             // lblCredits
             // 
             this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(435, 17);
+            this.lblCredits.Location = new System.Drawing.Point(330, 17);
             this.lblCredits.Name = "lblCredits";
             this.lblCredits.Size = new System.Drawing.Size(79, 21);
             this.lblCredits.TabIndex = 7;
@@ -168,14 +168,14 @@
             this.pnlGameMain.Controls.Add(this.btnBack);
             this.pnlGameMain.Location = new System.Drawing.Point(12, 49);
             this.pnlGameMain.Name = "pnlGameMain";
-            this.pnlGameMain.Size = new System.Drawing.Size(927, 212);
+            this.pnlGameMain.Size = new System.Drawing.Size(991, 212);
             this.pnlGameMain.TabIndex = 10;
             this.pnlGameMain.Visible = false;
             // 
             // lblRTP
             // 
             this.lblRTP.AutoSize = true;
-            this.lblRTP.Location = new System.Drawing.Point(800, 17);
+            this.lblRTP.Location = new System.Drawing.Point(810, 17);
             this.lblRTP.Name = "lblRTP";
             this.lblRTP.Size = new System.Drawing.Size(56, 21);
             this.lblRTP.TabIndex = 12;
@@ -184,7 +184,7 @@
             // lblPlayedRound
             // 
             this.lblPlayedRound.AutoSize = true;
-            this.lblPlayedRound.Location = new System.Drawing.Point(642, 17);
+            this.lblPlayedRound.Location = new System.Drawing.Point(620, 17);
             this.lblPlayedRound.Name = "lblPlayedRound";
             this.lblPlayedRound.Size = new System.Drawing.Size(126, 21);
             this.lblPlayedRound.TabIndex = 11;
@@ -193,7 +193,7 @@
             // lblWin
             // 
             this.lblWin.AutoSize = true;
-            this.lblWin.Location = new System.Drawing.Point(548, 17);
+            this.lblWin.Location = new System.Drawing.Point(473, 17);
             this.lblWin.Name = "lblWin";
             this.lblWin.Size = new System.Drawing.Size(58, 21);
             this.lblWin.TabIndex = 10;
@@ -224,14 +224,14 @@
             this.pnlSimulate.Location = new System.Drawing.Point(12, 325);
             this.pnlSimulate.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSimulate.Name = "pnlSimulate";
-            this.pnlSimulate.Size = new System.Drawing.Size(469, 122);
+            this.pnlSimulate.Size = new System.Drawing.Size(492, 122);
             this.pnlSimulate.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(166, 7);
+            this.label1.Location = new System.Drawing.Point(174, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 21);
             this.label1.TabIndex = 13;
@@ -241,7 +241,7 @@
             // 
             this.lblStart.AutoSize = true;
             this.lblStart.ForeColor = System.Drawing.Color.Red;
-            this.lblStart.Location = new System.Drawing.Point(315, 9);
+            this.lblStart.Location = new System.Drawing.Point(329, 9);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(17, 21);
             this.lblStart.TabIndex = 12;
@@ -250,7 +250,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(242, 7);
+            this.label3.Location = new System.Drawing.Point(258, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 21);
             this.label3.TabIndex = 11;
@@ -267,7 +267,7 @@
             // 
             // numRound
             // 
-            this.numRound.Location = new System.Drawing.Point(242, 36);
+            this.numRound.Location = new System.Drawing.Point(258, 36);
             this.numRound.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -289,14 +289,14 @@
             // 
             // numCredits
             // 
-            this.numCredits.Location = new System.Drawing.Point(4, 35);
+            this.numCredits.Location = new System.Drawing.Point(4, 36);
             this.numCredits.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
             this.numCredits.Name = "numCredits";
-            this.numCredits.Size = new System.Drawing.Size(232, 29);
+            this.numCredits.Size = new System.Drawing.Size(248, 29);
             this.numCredits.TabIndex = 4;
             // 
             // label4
@@ -311,7 +311,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(489, 300);
+            this.label5.Location = new System.Drawing.Point(553, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(233, 21);
             this.label5.TabIndex = 12;
@@ -320,7 +320,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 300);
+            this.label6.Location = new System.Drawing.Point(12, 294);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(252, 21);
             this.label6.TabIndex = 13;
@@ -331,7 +331,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(950, 454);
+            this.ClientSize = new System.Drawing.Size(1011, 479);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -345,7 +345,6 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Just For The Win";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlEnterGame.ResumeLayout(false);
             this.pnlEnterGame.PerformLayout();

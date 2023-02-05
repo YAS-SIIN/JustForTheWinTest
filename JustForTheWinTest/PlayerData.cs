@@ -12,8 +12,8 @@ namespace JustForTheWinTest
     {
         public string Name { get; set; } = "";
         public string Description { get; set; } = "";
-        public List<PictureBox> ListBalls { get; set; } = new List<PictureBox>();
-        public List<BallData> BallData { get; set; } = new List<BallData>();                
+        public List<PictureBox> ListBallShape { get; set; } = new List<PictureBox>();
+        public List<BallData> ListBallData { get; set; } = new List<BallData>();                
         public decimal Credits { get; set; } = 0;
         public decimal WinCount { get; set; } = 0;
         public decimal PlayedRound { get; set; } = 0;   
