@@ -13,6 +13,15 @@ namespace JustForTheWinTest
             InitializeComponent();
             _playerData = new();
         }
+              
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                makeButtonBallsShape();
+            }
+            catch (Exception) { throw; }
+        }
 
         /// <summary>
         /// This method is for manual playing
@@ -233,15 +242,6 @@ namespace JustForTheWinTest
                 lblPlayedRound.Text = $"Played Round : {_playerData.PlayedRound}";
                 _playerData.RTP = ((_playerData.WinCount * 20) / (_playerData.PlayedRound * 10)) * 100;
                 lblRTP.Text = $"RTP : {_playerData.RTP.ToString("00.00")}";
-            }
-            catch (Exception) { throw; }
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                makeButtonBallsShape();
             }
             catch (Exception) { throw; }
         }
