@@ -42,7 +42,7 @@
             this.lblPlayedRound = new System.Windows.Forms.Label();
             this.lblWin = new System.Windows.Forms.Label();
             this.btnSimulate = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSimulate = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblStart = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.pnlEnterGame.SuspendLayout();
             this.pnlBasket.SuspendLayout();
             this.pnlGameMain.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlSimulate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRound)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCredits)).BeginInit();
             this.SuspendLayout();
@@ -95,9 +95,10 @@
             // 
             // pnlEnterGame
             // 
+            this.pnlEnterGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEnterGame.Controls.Add(this.txtPlayerName);
             this.pnlEnterGame.Controls.Add(this.btnPlay);
-            this.pnlEnterGame.Location = new System.Drawing.Point(489, 396);
+            this.pnlEnterGame.Location = new System.Drawing.Point(489, 297);
             this.pnlEnterGame.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEnterGame.Name = "pnlEnterGame";
             this.pnlEnterGame.Size = new System.Drawing.Size(450, 122);
@@ -107,10 +108,10 @@
             // 
             this.pnlBasket.BackColor = System.Drawing.Color.DarkOrange;
             this.pnlBasket.Controls.Add(this.lblBasket);
-            this.pnlBasket.Location = new System.Drawing.Point(4, 238);
+            this.pnlBasket.Location = new System.Drawing.Point(6, 130);
             this.pnlBasket.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBasket.Name = "pnlBasket";
-            this.pnlBasket.Size = new System.Drawing.Size(919, 98);
+            this.pnlBasket.Size = new System.Drawing.Size(915, 98);
             this.pnlBasket.TabIndex = 5;
             this.pnlBasket.Tag = "Basket";
             // 
@@ -144,7 +145,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.Location = new System.Drawing.Point(432, 193);
+            this.btnBack.Location = new System.Drawing.Point(435, 82);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 40);
@@ -164,7 +165,7 @@
             this.pnlGameMain.Controls.Add(this.btnBack);
             this.pnlGameMain.Location = new System.Drawing.Point(12, 49);
             this.pnlGameMain.Name = "pnlGameMain";
-            this.pnlGameMain.Size = new System.Drawing.Size(927, 340);
+            this.pnlGameMain.Size = new System.Drawing.Size(927, 241);
             this.pnlGameMain.TabIndex = 10;
             this.pnlGameMain.Visible = false;
             // 
@@ -197,7 +198,6 @@
             // 
             // btnSimulate
             // 
-            this.btnSimulate.Enabled = false;
             this.btnSimulate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSimulate.Location = new System.Drawing.Point(195, 72);
             this.btnSimulate.Margin = new System.Windows.Forms.Padding(4);
@@ -208,20 +208,21 @@
             this.btnSimulate.UseVisualStyleBackColor = true;
             this.btnSimulate.Click += new System.EventHandler(this.btnSimulate_Click);
             // 
-            // panel1
+            // pnlSimulate
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lblStart);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.numRound);
-            this.panel1.Controls.Add(this.numCredits);
-            this.panel1.Controls.Add(this.btnSimulate);
-            this.panel1.Location = new System.Drawing.Point(12, 396);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 122);
-            this.panel1.TabIndex = 4;
+            this.pnlSimulate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSimulate.Controls.Add(this.label1);
+            this.pnlSimulate.Controls.Add(this.lblStart);
+            this.pnlSimulate.Controls.Add(this.label3);
+            this.pnlSimulate.Controls.Add(this.label2);
+            this.pnlSimulate.Controls.Add(this.numRound);
+            this.pnlSimulate.Controls.Add(this.numCredits);
+            this.pnlSimulate.Controls.Add(this.btnSimulate);
+            this.pnlSimulate.Location = new System.Drawing.Point(12, 297);
+            this.pnlSimulate.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlSimulate.Name = "pnlSimulate";
+            this.pnlSimulate.Size = new System.Drawing.Size(469, 122);
+            this.pnlSimulate.TabIndex = 4;
             // 
             // label1
             // 
@@ -300,8 +301,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(951, 526);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(950, 423);
+            this.Controls.Add(this.pnlSimulate);
             this.Controls.Add(this.pnlGameMain);
             this.Controls.Add(this.pnlEnterGame);
             this.Controls.Add(this.lblTitle);
@@ -319,8 +320,8 @@
             this.pnlBasket.PerformLayout();
             this.pnlGameMain.ResumeLayout(false);
             this.pnlGameMain.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSimulate.ResumeLayout(false);
+            this.pnlSimulate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRound)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCredits)).EndInit();
             this.ResumeLayout(false);
@@ -344,7 +345,7 @@
         private Label lblPlayedRound;
         private Label lblRTP;
         private Button btnSimulate;
-        private Panel panel1;
+        private Panel pnlSimulate;
         private NumericUpDown numCredits;
         private NumericUpDown numRound;
         private Label label2;
