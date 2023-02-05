@@ -3,20 +3,20 @@ namespace JustForTheWinTest
     public partial class frmMain : Form
     {
         private PlayerData _playerData;
+
+
+        /// <summary>
+        /// form constructor
+        /// </summary>
         public frmMain()
         {
             InitializeComponent();
             _playerData = new();
         }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            try
-            {
-            }
-            catch (Exception) { throw; }
-        }
-
+             
+        /// <summary>
+        /// This method is for manual playing
+        /// </summary>
         private void btnPlay_Click(object sender, EventArgs e)
         {
             try
@@ -36,6 +36,9 @@ namespace JustForTheWinTest
             catch (Exception) { throw; }
         }
 
+        /// <summary>
+        /// Shall player name be over 3 character
+        /// </summary>
         private void txtPlayerName_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
@@ -48,6 +51,9 @@ namespace JustForTheWinTest
             catch (Exception) { throw; }
         }
 
+        /// <summary>
+        /// back to main and play again
+        /// </summary>
         private void btnBack_Click(object sender, EventArgs e)
         {
             try
@@ -65,6 +71,9 @@ namespace JustForTheWinTest
             catch (Exception) { throw; }
         }
 
+        /// <summary>
+        /// this method manage every ball click event 
+        /// </summary> 
         private void btnBall_Click(object sender, EventArgs e)
         {
             try
@@ -98,6 +107,9 @@ namespace JustForTheWinTest
             catch (Exception) { throw; }
         }
 
+        /// <summary>
+        /// Simulating automatic play by the system  
+        /// </summary>  
         private void btnSimulate_Click(object sender, EventArgs e)
         {
             try
@@ -177,8 +189,7 @@ namespace JustForTheWinTest
                 _playerData.BallData.Add(newBallData);
             }
         }
-
-
+           
         /// <summary>
         /// this method simulate the game
         /// </summary> 

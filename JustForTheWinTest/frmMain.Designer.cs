@@ -49,6 +49,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numRound = new System.Windows.Forms.NumericUpDown();
             this.numCredits = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnlEnterGame.SuspendLayout();
             this.pnlBasket.SuspendLayout();
             this.pnlGameMain.SuspendLayout();
@@ -98,7 +101,7 @@
             this.pnlEnterGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEnterGame.Controls.Add(this.txtPlayerName);
             this.pnlEnterGame.Controls.Add(this.btnPlay);
-            this.pnlEnterGame.Location = new System.Drawing.Point(489, 297);
+            this.pnlEnterGame.Location = new System.Drawing.Point(489, 325);
             this.pnlEnterGame.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEnterGame.Name = "pnlEnterGame";
             this.pnlEnterGame.Size = new System.Drawing.Size(450, 122);
@@ -108,10 +111,10 @@
             // 
             this.pnlBasket.BackColor = System.Drawing.Color.DarkOrange;
             this.pnlBasket.Controls.Add(this.lblBasket);
-            this.pnlBasket.Location = new System.Drawing.Point(6, 130);
+            this.pnlBasket.Location = new System.Drawing.Point(6, 109);
             this.pnlBasket.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBasket.Name = "pnlBasket";
-            this.pnlBasket.Size = new System.Drawing.Size(915, 98);
+            this.pnlBasket.Size = new System.Drawing.Size(915, 94);
             this.pnlBasket.TabIndex = 5;
             this.pnlBasket.Tag = "Basket";
             // 
@@ -145,7 +148,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.Location = new System.Drawing.Point(435, 82);
+            this.btnBack.Location = new System.Drawing.Point(435, 63);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 40);
@@ -165,7 +168,7 @@
             this.pnlGameMain.Controls.Add(this.btnBack);
             this.pnlGameMain.Location = new System.Drawing.Point(12, 49);
             this.pnlGameMain.Name = "pnlGameMain";
-            this.pnlGameMain.Size = new System.Drawing.Size(927, 241);
+            this.pnlGameMain.Size = new System.Drawing.Size(927, 212);
             this.pnlGameMain.TabIndex = 10;
             this.pnlGameMain.Visible = false;
             // 
@@ -218,7 +221,7 @@
             this.pnlSimulate.Controls.Add(this.numRound);
             this.pnlSimulate.Controls.Add(this.numCredits);
             this.pnlSimulate.Controls.Add(this.btnSimulate);
-            this.pnlSimulate.Location = new System.Drawing.Point(12, 297);
+            this.pnlSimulate.Location = new System.Drawing.Point(12, 325);
             this.pnlSimulate.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSimulate.Name = "pnlSimulate";
             this.pnlSimulate.Size = new System.Drawing.Size(469, 122);
@@ -228,7 +231,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(166, 10);
+            this.label1.Location = new System.Drawing.Point(166, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 21);
             this.label1.TabIndex = 13;
@@ -238,7 +241,7 @@
             // 
             this.lblStart.AutoSize = true;
             this.lblStart.ForeColor = System.Drawing.Color.Red;
-            this.lblStart.Location = new System.Drawing.Point(315, 12);
+            this.lblStart.Location = new System.Drawing.Point(315, 9);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(17, 21);
             this.lblStart.TabIndex = 12;
@@ -247,7 +250,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(242, 10);
+            this.label3.Location = new System.Drawing.Point(242, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 21);
             this.label3.TabIndex = 11;
@@ -256,7 +259,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 10);
+            this.label2.Location = new System.Drawing.Point(4, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 21);
             this.label2.TabIndex = 10;
@@ -296,12 +299,42 @@
             this.numCredits.Size = new System.Drawing.Size(232, 29);
             this.numCredits.TabIndex = 4;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 264);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 21);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Here we have two modes :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(489, 300);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(233, 21);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "2. Manually playing by the user. ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 300);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(252, 21);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "1. Automatic playing by the system";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(950, 423);
+            this.ClientSize = new System.Drawing.Size(950, 454);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pnlSimulate);
             this.Controls.Add(this.pnlGameMain);
             this.Controls.Add(this.pnlEnterGame);
@@ -352,5 +385,8 @@
         private Label label3;
         private Label lblStart;
         private Label label1;
+        private Label label4;
+        private Label label5;
+        private Label label6;
     }
 }
